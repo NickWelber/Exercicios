@@ -1,0 +1,24 @@
+input, textarea, select{
+    font-family: Arial;
+    resize: none;
+    font-size: 20px;
+	display: block;
+	width: 100%;
+	padding: 10px 20px;
+	margin: 10px 0;
+	outline: none;
+}
+input[type=submit]{
+    background: rgba(41, 41, 41, 0.685);
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+input[type=submit]:hover{
+	background-color: #8b8a8a;
+    cursor: pointer;
+}
+*{
+	box-sizing: border-box;
+}
