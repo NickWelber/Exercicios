@@ -1,2 +1,2 @@
 # Exercicios
-Exercícios a serem entregues pro Prof Beluzo
+Exercícios a serem entregues pro Prof  Fernando
