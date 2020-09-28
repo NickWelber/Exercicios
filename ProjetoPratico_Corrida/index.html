@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Corrida</title>
+	<link type='text/css' href='css/style.css' rel='stylesheet'>
+	<link rel="icon" href="imagens/Teste3.png" type="imagens/Teste3.png" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	
+</head>
+	<body>
+
+<!-- LOGO E INTRO -->
+		<div class="container">
+			<div class="row">
+				<a href="index.html" class="navbar-brand logotipo">
+					<img src="imagens/Teste3.png" alt="Logotipo da Corrida" />
+				</a>
+				<h1 style='color:green'>IFSP-RUN</h1>
+			</div>
+			<h3>Cadastre sua Corrida</h3>
+
+<!-- INPUT DOS VALORES DA CORRIDA -->
+			<form>
+				<div class="row">
+					<div class="col-sm-4 col-4">
+						<input type="text" id="km" placeholder="Quilometragem (KM):" class="form-control" />
+					</div>
+					<div class="col-sm-4 col-4">
+						<input type="text" id="minutos" placeholder="Duração (em minutos):" class="form-control" />
+					</div>
+					<div class="col-sm-4 col-4">
+						<input type="text" id="calorias" placeholder="Calorias:" class="form-control" />
+					</div>
+				</div>
+				<br/>
+
+<!-- BOTOES PARA SALVAR E CANCELAR -->
+				<div class="float-left">
+					<button id="button" class="btn submit btn-primary" type="buttom">Salvar</button>
+					<button id="button" class="btn btn-danger reset" type="reset">Cancelar</button>							
+				</div>
+			</form>
+			<br/><br/>
+
+<!-- TABELA DOS VALORES -->
+			<table class="table" id="corridas">
+				<tr>
+					<th scope="col-sm-3 col-3">Quilometragem (Km)</th>
+					<th scope="col-sm-3 col-3">Duração (min)</th>
+					<th scope="col-sm-3 col-3">Calorias (cal)</th>
+					<th scope="col-sm-3 col-3">Excluir</th>							
+				</tr>
+
+<!-- EXEMPLO DE VALORES PREENCHIDOS (TESTE) -->
+				<tr class="corrida">								
+					<td class="km">8</td>
+					<td class="minutos">10</td>
+					<td class="calorias">3</td>
+					<td center class="delete"></td>
+				</tr>
+				<tr class="corrida">								
+					<td class="km">20</td>
+					<td class="minutos">18</td>
+					<td class="calorias">5</td>
+					<td class="delete"></td>
+				</tr>
+			</table>
+		</div>
+		
+		<script src='js/jquery-3.3.1.min.js' type='text/javascript'></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src='js/funcoes.js' type='text/javascript'></script>
+	</body>
+</html>
