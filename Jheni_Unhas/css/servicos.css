@@ -1,0 +1,156 @@
+﻿@charset "utf-8";
+
+.CorpoPagina{
+	margin: auto;
+	width: 750px;
+	padding: 1em;
+	border: 3px solid #7c0a60;
+	border-radius: 1em;
+	text-align: left;
+}
+
+.CorpoPagina2{
+	margin: auto;
+	width: 600px;
+	padding: 1em;
+	border: 3px solid #7c0a60;
+	border-radius: 1em;
+	text-align: left;
+}
+
+.titulo2{
+	color:#fc0fc0;		
+	font-family:verdana;
+	text-align: center;
+	font-size: 25px;
+}
+
+.titulo3{
+	color:green;		
+	font-family:Times New Roman;
+	font-weight: bold; /* Deixar em Negrito */
+	text-decoration: none; /* Deixar SEM Sublinhado */
+	text-align: center;
+	font-size: 40px;
+}
+
+input[type="button"],
+ input[type="submit"],
+  button[type="button"]{
+	width: 80%!important;
+	cursor: pointer;  
+	background: #fc0fc0;
+	padding: 8px 5px;
+	color: #fff;
+	font-size: 20px;  
+	border: 1px solid #fff;   
+	margin-bottom: 3px;  
+	text-shadow: 0 1px 1px #333;
+   
+	-webkit-border-radius: 5px;
+	border-radius: 5px;   
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+	/* AQUI 'COMEÇA' O ESTILO DO MENU LATERAL ESQUERDO */
+	
+#MenuLateral{
+	width: 20%;
+	margin: 0; 
+	padding: 0;
+	float: left;
+	padding: 1rem .5rem;
+}
+#MenuLateral ul li {
+	/* Aqui é uma lista ordenada, que é o menu propriamente dito */	
+	margin: 0px; 
+	padding: 0px;
+	text-align: center;
+	list-style:none; /* Serve para tirar os marcadores de listas da tag <ul> e <li> */
+	padding: 0.5rem; /* Serve para dar epaço entre os botões */
+}
+
+#MenuLateral ul li a {
+	font-size: 15px;
+	text-align: center;
+	font-weight: bold; /* Deixar em Negrito */
+	text-decoration: none; /* Deixar SEM Sublinhado */
+	background-color: #ff00aa;
+	text-transform: uppercase;
+	width: 200px;
+	height: 50px;
+	padding: 10px 20px;
+	border-radius: 20px;
+	border: 3px solid transparent;
+	transition: .5s;
+	color: #fff;
+}
+
+#MenuLateral li:hover a {
+	text-decoration: none;
+	color: #adb900;
+	background-color: transparent;
+	border-color: #ff00aa; 
+}
+
+/* Somente para Centralizar, não funciona */
+#BotaoLogar10{
+	width: 20%;
+	margin: 0; 
+	padding: 0;
+	float: right;
+	padding: 1rem .5rem;	
+}
+#BotaoLogar10 ul li {
+	/* Aqui é uma lista ordenada, que é o menu propriamente dito */	
+	margin: 0px; 
+	padding: 0px;
+	text-align: center;
+	list-style:none; /* Serve para tirar os marcadores de listas da tag <ul> e <li> */
+	padding: 0.5rem; /* Serve para dar epaço entre os botões */
+}
+#BotaoLogar10 ul li a {
+	font-size: 1px;
+	background-color: #fccff4;
+	width: 1px;
+	height: 1px;
+	padding: 1px 1px;
+	border-radius: 1px;
+}
+	
+	/* AQUI 'TERMINA' O ESTILO DO MENU LATERAL ESQUERDO */
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+	/* AQUI 'COMEÇA' O CSS DOS SERVIÇOS */
+.Servico{
+	border: 2px solid #120a8f;
+	color: white;
+	background-color:Blue;
+}
+
+.texto1{
+	padding: 5px 10px;
+    margin: 5px;
+	border: 5px solid #fccff4;
+	font-family:Times New Roman;
+	color: black;
+	text-align:center;
+	font-size: 100%;
+}
+
+.tabela3{
+	padding: 5px 10px;
+    margin: 0px;
+	border: 5px solid #fccff4;
+	background-color:#fccff4;
+	text-align: center;
+}
+
+	/* AQUI 'TERMINA' O CSS DOS SERVIÇOS */	
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
