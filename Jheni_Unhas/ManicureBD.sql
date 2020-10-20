@@ -113,7 +113,7 @@ CREATE TABLE servico (
 	preco_servico double NOT NULL,
     data_servico date,
 		primary key (id_servico),
-        foreign key (id_categoria_servico) references categoria_servico(id_categoria_servico) ON delete cascade ON update cascade
+        foreign key (id_categoria_servico) references categoria_servico(id_categoria_servico) ON update cascade
 );
 
 -- Inserindo dados para a tabela `SERVICO`
@@ -158,6 +158,32 @@ INSERT INTO servico
 select * from servico;
 -- --------------------------------------------------------
 
+-- Estrutura para tabela `AGENDA`
+
+CREATE TABLE agenda (
+	id_agenda int auto_increment NOT NULL,
+	data_servico date NOT NULL,
+	horario_servico time NOT NULL,
+	situacao enum ('FINALIZADO','PENDENTE', 'CANCELADO'),
+	id_servico int,
+	id_cliente int NOT NULL,
+	id_manicure int NOT NULL,
+		primary key (id_agenda),
+        foreign key (id_servico) references servico(id_servico) ON update cascade,
+        foreign key (id_cliente) references cliente(id_cliente) ON update cascade,
+        foreign key (id_manicure) references manicure(id_manicure) ON update cascade	
+);
+
+-- Inserindo dados para a tabela `AGENDA`
+
+INSERT INTO agenda (data_servico, horario_servico, situacao, id_servico, id_cliente, id_manicure) VALUES
+('2020-02-10', '20:30:00', 'PENDENTE', 5, 3, 1),
+('2020-01-10', '10:10:00', 'FINALIZADO', 1, 4, 2),
+('2020-10-10', '11:30:00', 'CANCELADO', 16, 3, 1);
+
+select * from agenda;
+-- --------------------------------------------------------
+
 -- Estrutura para tabela `VENDA`
 
 CREATE TABLE venda (
@@ -166,60 +192,34 @@ CREATE TABLE venda (
 	data_venda date NOT NULL,
     forma_pagamento varchar(50) NOT NULL,
 	valor_total double NOT NULL,
+	id_agenda int NOT NULL,
 	id_servico int NOT NULL,
 	id_cliente int NOT NULL,
 		primary key (id_venda),
-        foreign key (id_servico) references servico(id_servico) ON delete cascade ON update cascade,
-        foreign key (id_cliente) references cliente(id_cliente) ON delete cascade ON update cascade	
+        foreign key (id_agenda) references agenda(id_agenda) ON update cascade,
+		foreign key (id_servico) references servico(id_servico) ON update cascade,
+        foreign key (id_cliente) references cliente(id_cliente) ON update cascade	
 );
 
 -- Inserindo dados para a tabela `VENDA`
 
-INSERT INTO venda (qtd_vendida, data_venda, forma_pagamento, valor_total, id_servico, id_cliente) VALUES
-(1, '2020-02-10', 'Dinheiro', 140, 17, 3),
-(1, '2020-01-10', 'Cartão Débito', 50, 1, 4),
-(1, '2020-09-10', 'Cartão Crédito', 35, 34, 3);
+INSERT INTO venda (qtd_vendida, data_venda, forma_pagamento, valor_total, id_agenda, id_servico, id_cliente) VALUES
+(1, '2020-02-10', 'Dinheiro', 140.99, 1, 17, 3),
+(1, '2020-01-10', 'Cartão Débito', 50.99, 2, 1, 4),
+(1, '2020-09-10', 'Cartão Crédito', 35.99, 3, 34, 3);
 
 select * from venda;
--- --------------------------------------------------------
-
--- Estrutura para tabela `AGENDA`
-
-CREATE TABLE agenda (
-	id_agenda int auto_increment NOT NULL,
-	data_servico date NOT NULL,
-	horario_servico time NOT NULL,
-	situacao enum ('FINALIZADO','PENDENTE', 'CANCELADO'),
-	id_venda int,
-	id_servico int,
-	id_cliente int NOT NULL,
-	id_manicure int NOT NULL,
-		primary key (id_agenda),
-        foreign key (id_servico) references servico(id_servico) ON delete cascade ON update cascade,
-		foreign key (id_venda) references venda(id_venda) ON delete cascade ON update cascade,
-        foreign key (id_cliente) references cliente(id_cliente) ON delete cascade ON update cascade,
-        foreign key (id_manicure) references manicure(id_manicure) ON delete cascade ON update cascade	
-);
-
--- Inserindo dados para a tabela `AGENDA`
-
-INSERT INTO agenda (data_servico, horario_servico, situacao, id_venda, id_servico, id_cliente, id_manicure) VALUES
-('2020-02-10', '20:30:00', 'PENDENTE', 1, 5, 3, 1),
-('2020-01-10', '10:10:00', 'FINALIZADO', 2, 1, 4, 2),
-('2020-10-10', '11:30:00', 'CANCELADO', 3, 16, 3, 1);
-
-select * from agenda;
 -- --------------------------------------------------------
 
 -- Estrutura para view `agenda_venda`
 
 --
 create view agenda_venda as select
-	id_agenda, data_servico, horario_servico, situacao, venda.id_venda, venda.id_servico, venda.id_cliente, 
+	agenda.id_agenda, data_servico, horario_servico, situacao, id_venda, venda.id_servico, venda.id_cliente, 
     id_manicure, qtd_vendida, data_venda, forma_pagamento, valor_total
 	FROM agenda
 		INNER JOIN venda ON 
-			agenda.id_venda = venda.id_venda;
+			agenda.id_agenda = venda.id_agenda;
 
 select * from agenda_venda;
 -- --------------------------------------------------------

@@ -33,7 +33,7 @@
                                 echo '
                             </b>                             
                         </button>
-                        <button class="dropdown-item" type="button">
+                        <button class="dropdown-item" type="button" id="btnAlterarPerfil">
                             Alterar Perfil
                         </button>
                         <button class="dropdown-item" type="button" id="btnLogout">
@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" id="home-menu" href="index.php">Home</a>
-                    <a class="nav-item nav-link" id="services-menu" href="servicos_outros.php">Cad.Serviços</a>
+                    <a class="nav-item nav-link" id="services-menu" href="servico_cadastrar.php">Cad.Serviços</a>
                     <a class="nav-item nav-link" id="services-agenda" href="agenda_cadastrar.php">Agendamento</a>
                     <a class="nav-item nav-link" id="portfolio-menu" href="carrinho.php">Carrinho</a>
                 </div>

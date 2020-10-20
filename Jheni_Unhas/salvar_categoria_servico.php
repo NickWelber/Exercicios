@@ -16,5 +16,5 @@
     
     $conn->close();
     
-    header("Location: servicos_outros.php");
+    header("Location: servico_cadastrar.php");
 ?>
